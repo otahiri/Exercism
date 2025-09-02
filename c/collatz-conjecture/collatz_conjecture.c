@@ -2,7 +2,7 @@
 
 int steps(int start)
 {
-	int i = 0;
+	int count = 0;
 	if (start <= 0)
 		return -1;
 	while (start != 1)
@@ -11,7 +11,7 @@ int steps(int start)
 			start /= 2;
 		else
 			start = (start * 3) + 1;
-		i++;
+		count++;
 	}
-	return i;
+	return count;
 }
