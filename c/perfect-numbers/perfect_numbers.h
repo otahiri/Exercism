@@ -7,5 +7,6 @@ typedef enum {
    DEFICIENT_NUMBER = 3,
    ERROR = -1
 } kind;
+int classify_number(int num);
 
 #endif
