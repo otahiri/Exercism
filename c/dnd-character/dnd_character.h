@@ -11,6 +11,8 @@ typedef struct {
    int hitpoints;
 } dnd_character_t;
 
+void *dice_roll(int *dice);
+void roll(int *dice);
 int ability(void);
 int modifier(int score);
 dnd_character_t make_dnd_character(void);
