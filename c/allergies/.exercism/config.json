@@ -1,0 +1,31 @@
+{
+  "authors": [
+    "RealBarrettBrown"
+  ],
+  "contributors": [
+    "bcc32",
+    "Gamecock",
+    "gea-migration",
+    "h-3-0",
+    "patricksjackson",
+    "QLaille",
+    "ryanplusplus",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "allergies.c",
+      "allergies.h"
+    ],
+    "test": [
+      "test_allergies.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
+  "source": "Exercise by the JumpstartLab team for students at The Turing School of Software and Design.",
+  "source_url": "https://turing.edu"
+}
