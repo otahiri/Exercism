@@ -106,7 +106,7 @@ int main(void)
    RUN_TEST(test_third_date);
    RUN_TEST(test_date_and_time);
    RUN_TEST(test_date_and_time_with_day_rollover);
-   // RUN_TEST(test_your_birthday);
+   RUN_TEST(test_your_birthday);
 
    return UNITY_END();
 }
