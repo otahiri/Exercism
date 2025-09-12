@@ -5,5 +5,6 @@
 
 unsigned int sum(const unsigned int *factors, const size_t number_of_factors,
                  const unsigned int limit);
+int is_similar(unsigned int *arr, unsigned int num, int size);
 
 #endif
