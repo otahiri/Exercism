@@ -1,0 +1,32 @@
+{
+  "authors": [
+    "StevenRoot"
+  ],
+  "contributors": [
+    "bcc32",
+    "bgraf",
+    "Gamecock",
+    "h-3-0",
+    "mikewalker",
+    "patricksjackson",
+    "QLaille",
+    "ryanplusplus",
+    "sjwarner",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "sieve.c",
+      "sieve.h"
+    ],
+    "test": [
+      "test_sieve.c"
+    ],
+    "example": [
+      ".meta/example.c"
+    ]
+  },
+  "blurb": "Use the Sieve of Eratosthenes to find all the primes from 2 up to a given number.",
+  "source": "Sieve of Eratosthenes at Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes"
+}
