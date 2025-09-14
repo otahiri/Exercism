@@ -1,0 +1,24 @@
+Here’s a practical checklist for learning deques (double-ended queues):
+
+**Core Operations:**
+1. Insert at the front.
+2. Insert at the back.
+3. Delete from the front.
+4. Delete from the back.
+5. Peek at the front element.
+6. Peek at the back element.
+7. Check if the deque is empty.
+8. Print all elements.
+9. Free the entire deque.
+
+**Implementation Approaches:**
+- Doubly linked list (most flexible for dynamic size).
+- Circular buffer (array-based, fixed size, efficient for some cases).
+
+**Bonus Concepts:**
+- Implement a deque using a doubly linked list in C.
+- Compare performance and use-cases with stacks and queues.
+- Explore real-world applications (e.g., undo/redo, sliding window algorithms).
+
+**Suggested Practice:**
+Try implementing a deque in C using a doubly linked list. Practice all the operations above. If you need help or want feedback, share your code!

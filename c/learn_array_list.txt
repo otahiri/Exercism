@@ -1,0 +1,13 @@
+Here are some practical problems to help you learn about array lists (dynamic arrays) in C:
+
+1. Implement a dynamic array that supports adding integers, removing by index, and resizing automatically when full.
+2. Write a function to insert an element at a specific position in your array list.
+3. Implement a function to search for a value and return its index (or -1 if not found).
+4. Write a function to remove all occurrences of a given value from the array list.
+5. Implement a function to reverse the array list in place.
+6. Write a function to sort the array list (e.g., using bubble sort).
+7. Implement a function to clear the array list (reset to empty).
+8. Write a function to print all elements of the array list.
+
+Try solving these step by step. If you need hints or code examples for any, let me know!
+

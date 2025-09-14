@@ -1,0 +1,20 @@
+Yes, there's a more effective approach for 42 specifically:
+
+1. Build your own libft first - implement the standard C library functions yourself. This reinforces fundamentals while directly preparing you for your first project.
+
+2. Create small projects that mimic 42's constraints:
+   - No standard library except what's explicitly allowed
+   - Follow the Norm coding style
+   - Focus on memory management without leaks
+
+3. Work through "The C Programming Language" by Kernighan and Ritchie, doing all exercises. This book aligns well with 42's philosophy.
+
+4. Join study groups with other 42 students - peer learning is central to the 42 model.
+
+5. When doing practice problems, focus on:
+   - Implementing data structures from scratch
+   - File handling and I/O
+   - Pointer manipulation and memory allocation
+
+This approach will prepare you better for 42's specific evaluation system than generic LeetCode problems alone.
+
