@@ -16,37 +16,41 @@ int insert_dig(int num, int idx, char *arr)
 	while (tmp / div >= 10)
 		div *= 10;
 	arr[idx++] = ':';
-	while (div > 0)
+	if (num == 0)
+		arr[idx++] = '0';
+	else
 	{
-		arr[idx++] = (tmp / div) + '0';
-		tmp %= div;
-		div /= 10;
+		while (div > 0)
+		{
+			arr[idx++] = (tmp / div) + '0';
+			tmp %= div;
+			div /= 10;
+		}
 	}
+	arr[idx++] = ' ';
 	return idx;
 }
 
 char *count(const char *dna_strand)
 {
-	int A = 0;
-	int C = 0;
-	int G = 0;
-	int T = 0;
+	char letters[4] = {'A', 'C', 'G', 'T'};
+	int count[4] = {0, 0, 0, 0};
 	char *res;
 	for (int i = 0; dna_strand[i]; i++)
 	{
 		switch (dna_strand[i])
 		{
 			case 'A' :
-				A++;
+				count[0]++;
 				break;
 			case 'C' :
-				C++;
+				count[1]++;
 				break;
 			case 'G' :
-				G++;
+				count[2]++;
 				break;
 			case 'T' :
-				T++;
+				count[3]++;
 				break;
 			default :
 				res = malloc(sizeof(char) * 1);
@@ -54,19 +58,13 @@ char *count(const char *dna_strand)
 				return res;
 		}
 	}
-	res = malloc(sizeof(char) * (digits(A) + digits(C) + digits(G) + digits(T) + 12));
+	res = malloc(sizeof(char) * (digits(count[0]) + digits(count[1]) + digits(count[2]) + digits(count[3]) + 12));
 	int idx = 0;
-	res[idx++] = 'A';
-	idx = insert_dig(A, idx, res);
-	res[idx++] = ' ';
-	res[idx++] = 'C';
-	idx = insert_dig(C, idx, res);
-	res[idx++] = ' ';
-	res[idx++] = 'G';
-	idx = insert_dig(G, idx, res);
-	res[idx++] = ' ';
-	res[idx++] = 'T';
-	idx = insert_dig(T, idx, res);
-	res[idx] = '\0';
+	for (int j = 0; j < 4; j++)
+	{
+		res[idx++] = letters[j];
+		idx = insert_dig(count[j], idx, res);
+	}
+	res[idx - 1] = '\0';
 	return res;
 }
