@@ -1,0 +1,28 @@
+{
+  "authors": [
+    "vlzware"
+  ],
+  "contributors": [
+    "h-3-0",
+    "patricksjackson",
+    "QLaille",
+    "ryanplusplus",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "prime_factors.c",
+      "prime_factors.h"
+    ],
+    "test": [
+      "test_prime_factors.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Compute the prime factors of a given natural number.",
+  "source": "The Prime Factors Kata by Uncle Bob",
+  "source_url": "https://web.archive.org/web/20221026171801/http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata"
+}

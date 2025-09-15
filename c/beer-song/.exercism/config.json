@@ -1,0 +1,31 @@
+{
+  "authors": [
+    "RealBarrettBrown"
+  ],
+  "contributors": [
+    "bcc32",
+    "Gamecock",
+    "gea-migration",
+    "h-3-0",
+    "patricksjackson",
+    "QLaille",
+    "ryanplusplus",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "beer_song.c",
+      "beer_song.h"
+    ],
+    "test": [
+      "test_beer_song.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Produce the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.",
+  "source": "Learn to Program by Chris Pine",
+  "source_url": "https://pine.fm/LearnToProgram/?Chapter=06"
+}
