@@ -1,4 +1,4 @@
-Yes, there's a more effective approach for 42 specifically:
+ Yes, there's a more effective approach for 42 specifically:
 
 1. Build your own libft first - implement the standard C library functions yourself. This reinforces fundamentals while directly preparing you for your first project.
 
