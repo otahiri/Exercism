@@ -80,8 +80,9 @@ int yacht(int *dice) {
       return 0;
   return 50;
 }
-int (*rule[])(int *) = {full_house,   four,   lil_straight,
-                        big_straight, choice, yacht};
+static int (*rule[])(int *) = {full_house,   four,   lil_straight,
+                               big_straight, choice, yacht};
+
 int score(dice_t dice, category_t category) {
   return category < FULL_HOUSE ? add(dice.faces, category + 1)
                                : rule[category - FULL_HOUSE](dice.faces);
