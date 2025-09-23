@@ -1,0 +1,4 @@
+use direction limits
+use direction to move through the matrix
+use mod to loops th direction 
+
