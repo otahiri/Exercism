@@ -24,61 +24,37 @@ spiral_matrix_t *spiral_matrix_create(int size)
   int up_bar = 0;
   int down_bar = size - 1;
   int num = 1;
+  int dx[4] = {1, 0, -1, 0};
+  int dy[4] = {0, 1, 0, -1};
   while (num <= size * size)
   {
-    if (x < 0 || y < 0 || x >= size || y >= size) {
-      printf("OUT OF BOUNDS: x=%d y=%d num=%d dir=%d\n", x, y, num, dir);
-      break;
-    }
-      spiral->matrix[y][x] = num++;
-    switch (dir) {
-      case RIGHT:
-        if (x < right_bar)
-          x++;
-        else {
-          dir = (dir + 1) % MAX;
-          up_bar++;
-          y++;
-        }
-        break;
-      case DOWN:
-        if (y < down_bar)
-          y++;
-        else {
-          dir = (dir + 1) % MAX;
-          right_bar--;
-          x--;
-        }
-        break;
-      case LEFT:
-        if (x > left_bar)
-          x--;
-        else{
-          dir = (dir + 1) % MAX;
-          down_bar--;
-          y--;
-        }
-       break;
-      case UP:
-        if (y > up_bar)
-          y--;
-        else{
-          dir = (dir + 1) % MAX;
-          left_bar++;
-          x++;
-        }
-        break;
-      default:
-        break;
+    spiral->matrix[y][x] = num++;
+    int nx = x + dx[dir];
+    int ny = y + dy[dir];
+    if (nx <= right_bar && nx >= left_bar && ny <= down_bar && ny >= up_bar)
+    {
+      x = nx;
+      y = ny;
+    }else{
+      switch (dir) {
+        case RIGHT: up_bar++; break;
+        case DOWN: right_bar--; break;
+        case LEFT: down_bar--; break;
+        case UP: left_bar++; break;
+        default: break;
       }
+      dir = (dir + 1) % MAX;
+      x += dx[dir];
+      y += dy[dir];
+    }
   }
-    return spiral;
+  return spiral;
 }
 
 void spiral_matrix_destroy(spiral_matrix_t *spiral)
 {
-    for (int i = 0; i < spiral->size; i++)
-      free(spiral->matrix[i]);
-    free(spiral->matrix);
-  }
+  for (int i = 0; i < spiral->size; i++)
+    free(spiral->matrix[i]);
+  free(spiral->matrix);
+}
 
