@@ -19,6 +19,7 @@ typedef struct {
 } roster_t;
 
 void init_roster(roster_t *roster);
-void add_student(roster_t *roster, char name[MAX_NAME_LENGTH], int grade);
+int add_student(roster_t *roster, char *name, int grade);
 roster_t get_grade(roster_t *roster, int grade);
+void sort_list(roster_t *roster);
 #endif
