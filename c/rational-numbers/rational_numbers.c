@@ -67,11 +67,12 @@ rational_t exp_rational(rational_t r, int16_t n)
   return  r;
 }
 
-//Exponentiation of a real number `x` to a rational number `r = a/b` is `x^(a/b) = root(x^a, b)`, where `root(p, q)` is the `q`th root of `p`.
+//Exponentiation of a real number `x` to a 
+//rational number `r = a/b` is `x^(a/b) = root(x^a, b)`,
+//where `root(p, q)` is the `q`th root of `p`.
 //
 
 float exp_real(uint16_t x, rational_t r)
 {
-  float res = sqrt()
-  return  ;
+  return (pow(pow(x, r.numerator), 1.0/r.denominator));
 }
