@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "wolf99"
+  ],
+  "contributors": [
+    "patricksjackson",
+    "rootbeersoup",
+    "ryanplusplus",
+    "xihh87"
+  ],
+  "files": {
+    "solution": [
+      "list_ops.c",
+      "list_ops.h"
+    ],
+    "test": [
+      "test_list_ops.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Implement basic list operations."
+}
