@@ -1,4 +1,5 @@
 #include "list_ops.h"
+#include <stdlib.h>
 
 list_t *new_list(size_t length, list_element_t elements[])
 {
@@ -14,16 +15,20 @@ list_t *new_list(size_t length, list_element_t elements[])
 // append entries to a list and return the new list
 list_t *append_list(list_t *list1, list_t *list2)
 {
+  list_t *res;
+  res = malloc(sizeof(list_t) + ((list1->length + list2->length) * sizeof(list_element_t)));
+  res->length = list1->length + list2->length;
+  for (size_t i = 0; i < list1->length; i++)
+    res->elements[i] = list1->elements[i]; 
   for (size_t i = 0; i < list2->length; i++)
-    list1->elements[i + list1->length] = list2->elements[i];
-  list1->length += list2->length;
-  return list1;
+    res->elements[i + list1->length] = list2->elements[i];
+  return res;
 }
 
 // filter list returning only values that satisfy the filter function
 list_t *filter_list(list_t *list, bool (*filter)(list_element_t)) {
   list_t *filt;
-  filt = malloc(sizeof(list_t *));
+  filt = malloc(sizeof(list_t) + (list->length * (sizeof(list_element_t))));
   size_t idx = 0;
   for (size_t i = 0; i < list->length; i++)
   {
@@ -37,7 +42,7 @@ list_t *filter_list(list_t *list, bool (*filter)(list_element_t)) {
 // returns the length of the list
 size_t length_list(list_t *list)
 {
-  return list->length;
+  return (list) ? list->length: 0;
 }
 
 // return a list of elements whose values equal the list value transformed by
@@ -60,7 +65,7 @@ list_element_t foldl_list(list_t *list, list_element_t initial,
                           list_element_t (*foldl)(list_element_t,
                                                   list_element_t))
 {
-  if (!list->length)
+  if (!list || !list->length)
     return initial;
   for (size_t i = 0; i < list->length; i++)
   {
@@ -74,7 +79,7 @@ list_element_t foldr_list(list_t *list, list_element_t initial,
                           list_element_t (*foldr)(list_element_t,
                                                   list_element_t))
 {
-  if (!list->length)
+  if (!list || !list->length)
     return initial;
   for (size_t i = list->length; i > 0; i--)
     initial = foldr(list->elements[i - 1], initial);
@@ -83,7 +88,7 @@ list_element_t foldr_list(list_t *list, list_element_t initial,
 
 list_t *reverse_list(list_t *list)
 {
-  if (!list->length)
+  if (!list || !list->length)
     return list;
   list_element_t tmp;
   size_t end = list->length - 1;
