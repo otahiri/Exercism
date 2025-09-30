@@ -5,7 +5,6 @@
 #include <stdbool.h>
 
 typedef int list_element_t;
-
 typedef struct {
    size_t length;
    list_element_t elements[];

@@ -136,7 +136,6 @@ static void test_append_empty_lists(void)
 
 static void test_append_list_to_empty_list(void)
 {
-   TEST_IGNORE();   // delete this line to run test
    list = new_list(0, NULL);
    list2 = new_list(3, (list_element_t[]){ 1, 3, 4 });
    size_t expected_length = 3;
@@ -152,7 +151,6 @@ static void test_append_list_to_empty_list(void)
 
 static void test_append_empty_list_to_list(void)
 {
-   TEST_IGNORE();
    list = new_list(4, (list_element_t[]){ 1, 2, 3, 4 });
    list2 = new_list(0, NULL);
    size_t expected_length = 4;
@@ -168,7 +166,6 @@ static void test_append_empty_list_to_list(void)
 
 static void test_append_non_empty_lists(void)
 {
-   TEST_IGNORE();
    list = new_list(2, (list_element_t[]){ 1, 2 });
    list2 = new_list(4, (list_element_t[]){ 2, 3, 4, 5 });
    size_t expected_length = 6;
@@ -184,7 +181,6 @@ static void test_append_non_empty_lists(void)
 
 static void test_filter_empty_list(void)
 {
-   TEST_IGNORE();
    list = new_list(0, NULL);
 
    actual = filter_list(list, filter_modulo);
@@ -196,7 +192,6 @@ static void test_filter_empty_list(void)
 
 static void test_filter_non_empty_list(void)
 {
-   TEST_IGNORE();
    list = new_list(5, (list_element_t[]){ 1, 2, 3, 4, 5 });
    size_t expected_length = 3;
    list_element_t expected_elements[] = { 1, 3, 5 };
@@ -210,7 +205,6 @@ static void test_filter_non_empty_list(void)
 
 static void test_length_empty_list(void)
 {
-   TEST_IGNORE();
    list = new_list(0, NULL);
    size_t expected = 0;
 
@@ -222,7 +216,6 @@ static void test_length_empty_list(void)
 
 static void test_length_non_empty_list(void)
 {
-   TEST_IGNORE();
    list = new_list(4, (list_element_t[]){ 1, 2, 3, 4 });
    size_t expected = 4;
 
@@ -234,7 +227,6 @@ static void test_length_non_empty_list(void)
 
 static void test_map_empty_list(void)
 {
-   TEST_IGNORE();
    list = new_list(0, NULL);
 
    actual = map_list(list, map_increment);
@@ -247,7 +239,6 @@ static void test_map_empty_list(void)
 static void test_map_non_empty_list(void)
 {
 
-   TEST_IGNORE();
    list = new_list(4, (list_element_t[]){ 1, 3, 5, 7 });
    size_t expected_length = 4;
    list_element_t expected_elements[] = { 2, 4, 6, 8 };
@@ -261,7 +252,6 @@ static void test_map_non_empty_list(void)
 
 static void test_foldl_empty_list(void)
 {
-   TEST_IGNORE();
    list = new_list(0, NULL);
    list_element_t initial = 2;
    list_element_t expected = 2;
@@ -275,7 +265,6 @@ static void test_foldl_empty_list(void)
 static void
 test_foldl_direction_independent_function_applied_to_non_empty_list(void)
 {
-   TEST_IGNORE();
    list = new_list(4, (list_element_t[]){ 1, 2, 3, 4 });
    list_element_t initial = 5;
    list_element_t expected = 15;
@@ -289,7 +278,6 @@ test_foldl_direction_independent_function_applied_to_non_empty_list(void)
 static void
 test_foldl_direction_dependent_function_applied_to_non_empty_list(void)
 {
-   TEST_IGNORE();
    list = new_list(2, (list_element_t[]){ 2, 5 });
    list_element_t initial = 5;
    list_element_t expected = 0;
@@ -302,7 +290,6 @@ test_foldl_direction_dependent_function_applied_to_non_empty_list(void)
 
 static void test_foldr_empty_list(void)
 {
-   TEST_IGNORE();
    list = new_list(0, NULL);
    list_element_t initial = 2;
    list_element_t expected = 2;
@@ -316,7 +303,6 @@ static void test_foldr_empty_list(void)
 static void
 test_foldr_direction_independent_function_applied_to_non_empty_list(void)
 {
-   TEST_IGNORE();
    list = new_list(4, (list_element_t[]){ 1, 2, 3, 4 });
    list_element_t initial = 5;
    list_element_t expected = 15;
@@ -330,7 +316,6 @@ test_foldr_direction_independent_function_applied_to_non_empty_list(void)
 static void
 test_foldr_direction_dependent_function_applied_to_non_empty_list(void)
 {
-   TEST_IGNORE();
    list = new_list(2, (list_element_t[]){ 2, 5 });
    list_element_t initial = 5;
    list_element_t expected = 2;
@@ -343,7 +328,6 @@ test_foldr_direction_dependent_function_applied_to_non_empty_list(void)
 
 static void test_reverse_empty_list(void)
 {
-   TEST_IGNORE();
    list = new_list(0, NULL);
 
    actual = reverse_list(list);
@@ -355,7 +339,6 @@ static void test_reverse_empty_list(void)
 
 static void test_reverse_non_empty_list(void)
 {
-   TEST_IGNORE();
    list = new_list(4, (list_element_t[]){ 1, 3, 5, 7 });
    size_t expected_length = 4;
    list_element_t expected_elements[] = { 7, 5, 3, 1 };
