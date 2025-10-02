@@ -88,17 +88,16 @@ list_element_t foldr_list(list_t *list, list_element_t initial,
 
 list_t *reverse_list(list_t *list)
 {
+  list_t *res;
+  res = malloc(sizeof(list_t) + (list->length * sizeof(list_element_t)));
+  res->length = 0;
   if (!list || !list->length)
-    return list;
-  list_element_t tmp;
-  size_t end = list->length - 1;
-  for (size_t i = 0; i < end; i++, end--)
-  {
-    tmp = list->elements[i];
-    list->elements[i] = list->elements[end];
-    list->elements[end] = tmp;
-  }
-  return list;
+    return res;
+  size_t idx = 0;
+  for (size_t i = list->length; i > 0; i--, idx++)
+    res->elements[idx] = list->elements[i - 1];
+  res->length = idx;
+  return res;
 }
 
 // destroy the entire list
