@@ -1,17 +1,19 @@
-def comp(sides):
-    count = 0
-    for x in sides:
-        for y in sides:
-            if x == y:
-                count += 1
-    return count - 3
-
 def equilateral(sides):
-    return comp(sides) == 3
+    for i in range(3):
+        if sides[i] == 0:
+            return False
+    return sides[0] == sides[1] == sides[2]
+
 
 def isosceles(sides):
-    return comp(sides) == 2
+    a, b, c = sorted(sides)
+    if (a + b < c):
+        return False
+    return a == b or a == c or b == c
 
 
 def scalene(sides):
-    return comp(sides) == 0
+    a, b, c = sorted(sides)
+    if (a + b < c):
+        return False
+    return sides[0] != sides[1] != sides[2] != sides[0]
