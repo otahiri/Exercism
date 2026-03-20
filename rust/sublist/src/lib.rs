@@ -7,7 +7,14 @@ pub enum Comparison {
 }
 
 pub fn sublist(first_list: &[i32], second_list: &[i32]) -> Comparison {
-    todo!(
-        "Determine if the {first_list:?} is equal to, sublist of, superlist of or unequal to {second_list:?}."
-    );
+    let bigger:&[i32];
+    let smaller:&[i32];
+    let sup: bool;
+
+    let (bigger, smaller, sup) = if first_list.len() > second_list.len(){
+        (first_list, second_list, true);
+    } else{
+        (second_list, first_list, false);
+    };
+    return
 }
