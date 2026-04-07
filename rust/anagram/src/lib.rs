@@ -1,4 +1,5 @@
 use std::collections::HashSet;
+
 macro_rules! s_sort {
     ($s:expr) => {
         {
