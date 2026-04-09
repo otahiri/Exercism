@@ -1,34 +1,28 @@
-macro_rules! count {
-    ($garden:expr, $i:expr, $j:expr) => {{
-        let mut total = 0;
-        let max_height: i32 = $garden.len() as i32;
-        let max_width: i32 = $garden[0].len() as i32;
-        let row: String = $garden[$i].to_owned();
-        total += (($i  - 1) >= 0 && $garden[$i - 1][$j] == '*') as i32;
-        total += (($j  - 1) >= 0 && row.chars().nth($j) == Some('*')) as i32;
-        total += (($j  - 1) >= 0 && ($i - 1) >= 0 && row.chars().nth($j - 1) == Some('*')) as i32;
-        total += (($i  + 1) < max_hight && $garden[$i + 1][$j] == '*') as i32;
-        total += (($j  + 1) < max_width && $garden[$i][$j + 1] == '*') as i32;
-        total += (($j  + 1) < max_width && ($i + 1) < max_hight && $garden[$i + 1][$j + 1] == '*') as i32;
-        total += (($j  - 1) >= 0 && ($i + 1) < max_hight && $garden[$i + 1][$j + 1] == '*') as i32;
-        total += (($i  - 1) >= 0 && ($j + 1) < max_width && $garden[$i - 1][$j + 1] == '*') as i32;
-        total += (($j  - 1) >= 0 && ($i + 1) < max_height && $garden[$i + 1][$j - 1] == '*') as i32;
-        total
-    }};
-}
 
-pub fn annotate(garden: &[&str]) -> Vec<String> {
-    let res: Vec<String>;
-    for i in 0..garden.len() {
-        let row: String = garden[i].to_owned();
-        for j in 0..garden[0].len() {
-            if row.chars().nth(j) == Some('*') {
-                res[i].push('*')
-            }
-            else if row.chars().nth(j) == Some(' ') {
-                res[i].push(count!(garden, i, j));
+pub fn count_chars(garden: &Vec<Vec<char>>, y: isize, x: isize) -> usize {
+    let directions: [(isize, isize); 8] = [(-1, -1), (1, 1), (1, -1), (-1, 1), (1, 0), (-1, 0), (0, 1), (0, -1), ];
+    let width: isize = garden.len() as isize;
+    let height: isize = garden[x as usize].len() as isize;
+    let mut total: usize = 0;
+    for (dy, dx) in directions {
+        if 0 <= (dy + y) && (dy + y) < height && 0 <= (dx + x) && (dx + x) < width {
+            if garden[(dx + x) as usize][(dy + y) as usize] == '*' {
+            total += 1;
             }
         }
     }
-    res
+    total
+}
+
+pub fn annotate(garden: &[&str]) -> Vec<String> {
+    let mut s: Vec<Vec<char>> = garden.iter().map(|s| s.chars().collect()).collect();
+    for i in 0..s.len() {
+        for j in 0..s[0].len() {
+             if s[i][j] == ' '  {
+                 let res: u32 = count_chars(&s, j as isize, i as isize) as u32;
+                s[i][j] = if res > 0 {char::from_digit(res as u32, 10).unwrap()} else {' '};
+            }
+        }
+    }
+    s.iter().map(|row| row.iter().collect::<String>()).collect()
 }

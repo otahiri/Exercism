@@ -9,7 +9,6 @@ fn no_rows() {
 }
 
 #[test]
-#[ignore]
 fn no_columns() {
     let input = &[""];
     let expected = &[""];
@@ -18,7 +17,6 @@ fn no_columns() {
 }
 
 #[test]
-#[ignore]
 fn no_flowers() {
     #[rustfmt::skip]
     let (input, expected) = (&[
@@ -35,7 +33,6 @@ fn no_flowers() {
 }
 
 #[test]
-#[ignore]
 fn garden_full_of_flowers() {
     #[rustfmt::skip]
     let (input, expected) = (&[
@@ -52,7 +49,6 @@ fn garden_full_of_flowers() {
 }
 
 #[test]
-#[ignore]
 fn flower_surrounded_by_spaces() {
     #[rustfmt::skip]
     let (input, expected) = (&[
@@ -69,7 +65,6 @@ fn flower_surrounded_by_spaces() {
 }
 
 #[test]
-#[ignore]
 fn space_surrounded_by_flowers() {
     #[rustfmt::skip]
     let (input, expected) = (&[
@@ -86,7 +81,6 @@ fn space_surrounded_by_flowers() {
 }
 
 #[test]
-#[ignore]
 fn horizontal_line() {
     let input = &[" * * "];
     let expected = &["1*2*1"];
@@ -95,7 +89,6 @@ fn horizontal_line() {
 }
 
 #[test]
-#[ignore]
 fn horizontal_line_flowers_at_edges() {
     let input = &["*   *"];
     let expected = &["*1 1*"];
@@ -104,7 +97,6 @@ fn horizontal_line_flowers_at_edges() {
 }
 
 #[test]
-#[ignore]
 fn vertical_line() {
     #[rustfmt::skip]
     let (input, expected) = (&[
@@ -125,7 +117,6 @@ fn vertical_line() {
 }
 
 #[test]
-#[ignore]
 fn vertical_line_flowers_at_edges() {
     #[rustfmt::skip]
     let (input, expected) = (&[
@@ -146,7 +137,6 @@ fn vertical_line_flowers_at_edges() {
 }
 
 #[test]
-#[ignore]
 fn cross() {
     #[rustfmt::skip]
     let (input, expected) = (&[
@@ -167,7 +157,6 @@ fn cross() {
 }
 
 #[test]
-#[ignore]
 fn large_garden() {
     #[rustfmt::skip]
     let (input, expected) = (&[
@@ -190,7 +179,6 @@ fn large_garden() {
 }
 
 #[test]
-#[ignore]
 fn multiple_adjacent_flowers() {
     let input = &[" ** "];
     let expected = &["1**1"];
